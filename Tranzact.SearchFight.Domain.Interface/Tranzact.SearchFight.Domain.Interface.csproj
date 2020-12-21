@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tranzact.SearchFight.API.Entities\Tranzact.SearchFight.API.Entities.csproj" />
+    <ProjectReference Include="..\Tranzact.SearchFight.Domain.Entities\Tranzact.SearchFight.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Tranzact.SearchFight.Transversal\Tranzact.SearchFight.Transversal.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tTcm1WRQGzA1xvn1FLSI6N7USgJQpJm7++xm3+TVyQpZAzAspWRQCktDiCfIFu1hU56Sa4aUUdNq17FAGzWE4Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\naldo.reupomusayon\\source\\repos\\Tranzact\\Tranzact.SearchFight.API.Entities\\Tranzact.SearchFight.API.Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\naldo.reupomusayon\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
