@@ -10,6 +10,6 @@ namespace Tranzact.SearchFight.Domain.Interface
     public interface InterfaceSearchEngineDomain
     {
         string Engine { get; }
-        Task<Response<SearchOUT>> Search(string query);
+        Task<Response<SearchOUT>> GetTotals(List<string> words);
     }
 }

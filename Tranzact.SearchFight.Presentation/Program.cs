@@ -23,10 +23,10 @@ namespace Tranzact.SearchFight.Presentation
             Console.WriteLine();
             string query = Console.ReadLine().ToString();
 
-            var lista = await GetAsync(query);
-            PrintSearch(lista);
-            PrintWinners(lista);
-            PrintTotalWinner(lista);
+            var listTotals = await GetTotals(query);
+            PrintSearch(listTotals);
+            PrintWinners(listTotals);
+            PrintTotalWinner(listTotals);
         }
         private static void SetUpConfiguration()
         {
@@ -35,11 +35,11 @@ namespace Tranzact.SearchFight.Presentation
                 .AddJsonFile("appsettings.json")
                 .Build();
         }
-
-        private static async Task<List<SearchOUT>> GetAsync(String query)
+        private static async Task<List<SearchOUT>> GetTotals(String query)
         {
             List<SearchOUT> Searchs = new List<SearchOUT>();
             string urlSearchService = _configuration["urlSearchService"];
+
             var engines = _configuration.GetSection("engines")
                                         .GetChildren()
                                         .Select(x => x.Value)
@@ -69,7 +69,6 @@ namespace Tranzact.SearchFight.Presentation
             }
             return Searchs;
         }
-
         private static void PrintSearch(List<SearchOUT> lista)
         {
             var words = lista.Select(e => e.word).Distinct();

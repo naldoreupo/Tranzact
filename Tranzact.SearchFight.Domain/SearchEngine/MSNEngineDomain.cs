@@ -1,24 +1,33 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
-using System.Text;
+//using Microsoft.Azure.CognitiveServices.Search.WebSearch;
+//using Microsoft.Azure.CognitiveServices.Search.WebSearch.Models;
+using System.Linq;
 using System.Threading.Tasks;
 using Tranzact.SearchFight.API.Entities.OUTPUT;
 using Tranzact.SearchFight.Domain.Interface;
+using Tranzact.SearchFight.API.Entities;
 using Tranzact.SearchFight.Transversal;
+using Tranzact.SearchFight.Domain.Entities;
+using Newtonsoft.Json;
+using Microsoft.Azure.CognitiveServices.Search.WebSearch;
 
 namespace Tranzact.SearchFight.Domain.SearchEngine
 {
     public class MSNEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.MSN;
+        private readonly AppSettings _appSettings;
+        public MSNEngineDomain(AppSettings appSettings)
+        {
+            _appSettings = appSettings;
+        }
 
-        public async Task<Response<SearchOUT>> Search(string query)
+        public async Task<Response<SearchOUT>> GetTotals(List<string> words)
         {
             try
             {
                 Random _random = new Random();
-                string[] words = query.Split(" ");
                 var list = new List<SearchOUT>();
 
                 foreach (var word in words)
@@ -40,6 +49,19 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
                     Message = "Error getting data"
                 };
             }
+        }
+
+        public async Task<SearchOUT> SearchEngine(string word)
+        {
+            var client = new WebSearchClient(new ApiKeyServiceClientCredentials(_appSettings.msnEngine.apiKey));
+            var webData = await client.Web.SearchAsync(query: word);
+
+            return new SearchOUT()
+            {
+                word = word,
+                totalRecords = webData.WebPages.Value.Count,
+                engine = this.Engine
+            };
         }
     }
 }

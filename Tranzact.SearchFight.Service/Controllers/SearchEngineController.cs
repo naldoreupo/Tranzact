@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Tranzact.SearchFight.API.Entities.INPUT;
 using Tranzact.SearchFight.Domain.Interface;
@@ -34,7 +33,7 @@ namespace Tranzact.SearchFight.Service.Controllers
                     return BadRequest($"{searchIN.engine} is not currently supported");
 
                 var _engineDomain = _searchEngine.Build(searchIN.engine);
-                var result = await _engineDomain.Search(searchIN.query);
+                var result = await _engineDomain.GetTotals(searchIN.query.SplitBySpace());
 
                 return Ok(result);
             }

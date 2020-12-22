@@ -7,10 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tranzact.SearchFight.API.Entities;
 using Tranzact.SearchFight.Domain.Interface;
 using Tranzact.SearchFight.Domain.SearchEngine;
 using Tranzact.SearchFight.Transversal;
@@ -29,6 +31,11 @@ namespace Tranzact.SearchFight.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+               .Configure<AppSettings>(Configuration)
+               .AddSingleton(sp => sp.GetRequiredService<IOptions<AppSettings>>().Value);
+
+
             IMapper iMapper = Maps.InitMapper();
             services.AddSingleton(iMapper);
 

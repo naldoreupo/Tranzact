@@ -6,11 +6,3 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Transversal\obj\De
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.csproj.CoreCompileInputs.cache
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.pdb
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.deps.json
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.dll
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.pdb
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.AssemblyInfoInputs.cache
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.AssemblyInfo.cs
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.csproj.CoreCompileInputs.cache
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.dll
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Transversal\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Transversal.pdb
