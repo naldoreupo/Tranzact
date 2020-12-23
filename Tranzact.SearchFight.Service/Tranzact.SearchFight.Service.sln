@@ -17,19 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.Domain
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Transversal", "4. Transversal", "{515AE2FB-FBE3-47A8-BC57-A8A0CC4787CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.Transversal", "..\Tranzact.SearchFight.Transversal\Tranzact.SearchFight.Transversal.csproj", "{4B564118-16F7-4DAF-8747-99BCBF6CF267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.Transversal", "..\Tranzact.SearchFight.Transversal\Tranzact.SearchFight.Transversal.csproj", "{4B564118-16F7-4DAF-8747-99BCBF6CF267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.Presentation.Test", "..\Tranzact.SearchFight.Presentation.Test\Tranzact.SearchFight.Presentation.Test.csproj", "{13F1071B-C7DF-4A44-9513-49C2154AE740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.Presentation.Test", "..\Tranzact.SearchFight.Presentation.Test\Tranzact.SearchFight.Presentation.Test.csproj", "{13F1071B-C7DF-4A44-9513-49C2154AE740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.API.Test", "..\Tranzact.SearchFight.Service.Test\Tranzact.SearchFight.API.Test.csproj", "{98AF9259-1D9B-4F69-91EE-1C283510582D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.API.Test", "..\Tranzact.SearchFight.Service.Test\Tranzact.SearchFight.API.Test.csproj", "{98AF9259-1D9B-4F69-91EE-1C283510582D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.Domain.Test", "..\Tranzact.SearchFight.Domain.Test\Tranzact.SearchFight.Domain.Test.csproj", "{A9E37DEE-BD55-4255-B14E-53ECFD18F6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.Domain.Test", "..\Tranzact.SearchFight.Domain.Test\Tranzact.SearchFight.Domain.Test.csproj", "{A9E37DEE-BD55-4255-B14E-53ECFD18F6F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.Domain.Interface", "..\Tranzact.SearchFight.Domain.Interface\Tranzact.SearchFight.Domain.Interface.csproj", "{A7480479-4440-468F-B57B-ECF24DB8B548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.Domain.Interface", "..\Tranzact.SearchFight.Domain.Interface\Tranzact.SearchFight.Domain.Interface.csproj", "{A7480479-4440-468F-B57B-ECF24DB8B548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.Domain.Entities", "..\Tranzact.SearchFight.Domain.Entities\Tranzact.SearchFight.Domain.Entities.csproj", "{D9C544EF-3BC9-41BC-9331-B4677E1FFCC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.Domain.Entities", "..\Tranzact.SearchFight.Domain.Entities\Tranzact.SearchFight.Domain.Entities.csproj", "{D9C544EF-3BC9-41BC-9331-B4677E1FFCC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tranzact.SearchFight.API.Entities", "..\Tranzact.SearchFight.API.Entities\Tranzact.SearchFight.API.Entities.csproj", "{10AC2F75-AD65-4D6F-BDC6-5CC9BB717159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tranzact.SearchFight.API.Entities", "..\Tranzact.SearchFight.API.Entities\Tranzact.SearchFight.API.Entities.csproj", "{10AC2F75-AD65-4D6F-BDC6-5CC9BB717159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

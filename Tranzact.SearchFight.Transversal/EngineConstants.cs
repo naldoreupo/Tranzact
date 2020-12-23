@@ -6,6 +6,5 @@ namespace Tranzact.SearchFight.Transversal
     {
         public const string Google = "Google";
         public const string MSN = "MSN";
-        public const string Bing = "Bing";
     }
 }

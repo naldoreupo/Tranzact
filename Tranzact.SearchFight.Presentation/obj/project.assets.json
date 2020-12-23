@@ -1023,7 +1023,24 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "Tranzact.SearchFight.Transversal/1.0.0": {
+      "Tranzact.SearchFight.API.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Azure.Search.Documents": "11.1.1",
+          "Microsoft.Rest.ClientRuntime": "2.3.22",
+          "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
+          "Newtonsoft.Json": "12.0.3",
+          "System.Net.Http": "4.3.4"
+        },
+        "compile": {
+          "bin/placeholder/Tranzact.SearchFight.API.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tranzact.SearchFight.API.Entities.dll": {}
+        }
+      },
+      "Tranzact.SearchFight.Domain.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -1033,6 +1050,26 @@
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
           "Newtonsoft.Json": "12.0.3",
           "System.Net.Http": "4.3.4"
+        },
+        "compile": {
+          "bin/placeholder/Tranzact.SearchFight.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tranzact.SearchFight.Domain.Entities.dll": {}
+        }
+      },
+      "Tranzact.SearchFight.Transversal/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Azure.Search.Documents": "11.1.1",
+          "Microsoft.Rest.ClientRuntime": "2.3.22",
+          "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
+          "Newtonsoft.Json": "12.0.3",
+          "System.Net.Http": "4.3.4",
+          "Tranzact.SearchFight.API.Entities": "1.0.0",
+          "Tranzact.SearchFight.Domain.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Tranzact.SearchFight.Transversal.dll": {}
@@ -3736,6 +3773,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Tranzact.SearchFight.API.Entities/1.0.0": {
+      "type": "project",
+      "path": "../Tranzact.SearchFight.API.Entities/Tranzact.SearchFight.API.Entities.csproj",
+      "msbuildProject": "../Tranzact.SearchFight.API.Entities/Tranzact.SearchFight.API.Entities.csproj"
+    },
+    "Tranzact.SearchFight.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../Tranzact.SearchFight.Domain.Entities/Tranzact.SearchFight.Domain.Entities.csproj",
+      "msbuildProject": "../Tranzact.SearchFight.Domain.Entities/Tranzact.SearchFight.Domain.Entities.csproj"
     },
     "Tranzact.SearchFight.Transversal/1.0.0": {
       "type": "project",

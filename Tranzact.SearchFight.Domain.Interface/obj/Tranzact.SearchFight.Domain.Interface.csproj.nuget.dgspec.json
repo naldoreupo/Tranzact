@@ -273,7 +273,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\naldo.reupomusayon\\source\\repos\\Tranzact\\Tranzact.SearchFight.API.Entities\\Tranzact.SearchFight.API.Entities.csproj": {
+                "projectPath": "C:\\Users\\naldo.reupomusayon\\source\\repos\\Tranzact\\Tranzact.SearchFight.API.Entities\\Tranzact.SearchFight.API.Entities.csproj"
+              },
+              "C:\\Users\\naldo.reupomusayon\\source\\repos\\Tranzact\\Tranzact.SearchFight.Domain.Entities\\Tranzact.SearchFight.Domain.Entities.csproj": {
+                "projectPath": "C:\\Users\\naldo.reupomusayon\\source\\repos\\Tranzact\\Tranzact.SearchFight.Domain.Entities\\Tranzact.SearchFight.Domain.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

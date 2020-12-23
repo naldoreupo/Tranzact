@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-//using Microsoft.Azure.CognitiveServices.Search.WebSearch;
-//using Microsoft.Azure.CognitiveServices.Search.WebSearch.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using Tranzact.SearchFight.API.Entities.OUTPUT;
@@ -10,29 +8,38 @@ using Tranzact.SearchFight.API.Entities;
 using Tranzact.SearchFight.Transversal;
 using Tranzact.SearchFight.Domain.Entities;
 using Newtonsoft.Json;
-using Microsoft.Azure.CognitiveServices.Search.WebSearch;
+using System.Net.Http;
+using AutoMapper;
+using Microsoft.Extensions.Options;
 
 namespace Tranzact.SearchFight.Domain.SearchEngine
 {
     public class MSNEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.MSN;
-        private readonly AppSettings _appSettings;
-        public MSNEngineDomain(AppSettings appSettings)
+        private readonly IMapper _mapper;
+        private readonly IOptions<MSNEngine> _config;
+        public MSNEngineDomain( IMapper mapper, IOptions<MSNEngine> config)
         {
-            _appSettings = appSettings;
+            _config = config;
+            _mapper = mapper;
         }
 
-        public async Task<Response<SearchOUT>> GetTotals(List<string> words)
+        public async Task<Response<SearchOUT>> GetSearchTotals(List<string> words)
         {
             try
             {
-                Random _random = new Random();
                 var list = new List<SearchOUT>();
 
                 foreach (var word in words)
                 {
-                    list.Add(new SearchOUT() { word = word, totalRecords = _random.Next(500, 600), engine = this.Engine });
+                    var apiResponse = await InvokeSearchEngineAPI(word);
+                    list.Add(new SearchOUT()
+                    {
+                        word = word,
+                        totalResults = apiResponse.totalResults,
+                        engine = this.Engine
+                    });
                 }
 
                 return new Response<SearchOUT>()
@@ -51,17 +58,21 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
             }
         }
 
-        public async Task<SearchOUT> SearchEngine(string word)
+        public async Task<ApiResponse> InvokeSearchEngineAPI(string word)
         {
-            var client = new WebSearchClient(new ApiKeyServiceClientCredentials(_appSettings.msnEngine.apiKey));
-            var webData = await client.Web.SearchAsync(query: word);
+            string apiKey = _config.Value.apiKey;
+            var customsearchUrl = $"{_config.Value.baseUrl}/search?q={word}";
+            var msnResponse = new MSNResponse();
 
-            return new SearchOUT()
+            using (var client = new HttpClient())
             {
-                word = word,
-                totalRecords = webData.WebPages.Value.Count,
-                engine = this.Engine
-            };
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
+                var response = await client.GetAsync(customsearchUrl);
+                var result = await response.Content.ReadAsStringAsync();
+                msnResponse = JsonConvert.DeserializeObject<MSNResponse>(result);
+            }
+
+            return _mapper.Map<MSNResponse, ApiResponse>(msnResponse);
         }
     }
 }

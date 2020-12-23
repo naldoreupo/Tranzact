@@ -945,7 +945,9 @@
           "Microsoft.Rest.ClientRuntime": "2.3.22",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
           "Newtonsoft.Json": "12.0.3",
-          "System.Net.Http": "4.3.4"
+          "System.Net.Http": "4.3.4",
+          "Tranzact.SearchFight.API.Entities": "1.0.0",
+          "Tranzact.SearchFight.Domain.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Tranzact.SearchFight.Transversal.dll": {}

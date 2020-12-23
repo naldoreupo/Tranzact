@@ -13,4 +13,9 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tranzact.SearchFight.API.Entities\Tranzact.SearchFight.API.Entities.csproj" />
+    <ProjectReference Include="..\Tranzact.SearchFight.Domain.Entities\Tranzact.SearchFight.Domain.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

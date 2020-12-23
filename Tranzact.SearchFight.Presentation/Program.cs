@@ -53,7 +53,7 @@ namespace Tranzact.SearchFight.Presentation
 
                     var request = new HttpRequestMessage
                     {
-                        RequestUri = new Uri($"{urlSearchService}/SearchEngine"),
+                        RequestUri = new Uri($"{urlSearchService}/SearchEngine/GetSearchTotals"),
                         Method = new HttpMethod("Get"),
                         Content = new StringContent(payload, Encoding.UTF8, "application/json")
                     };
@@ -79,7 +79,7 @@ namespace Tranzact.SearchFight.Presentation
                 string printSearch = $"{word}";
                 foreach (var engine in engines)
                 {
-                    var total = lista.Where(e => e.engine == engine && e.word == word).Single().totalRecords;
+                    var total = lista.Where(e => e.engine == engine && e.word == word).Single().totalResults;
                     printSearch += $" {engine} : {total}";
                 }
                 Console.WriteLine(printSearch);
@@ -92,14 +92,14 @@ namespace Tranzact.SearchFight.Presentation
 
             foreach (var engine in engines)
             {
-                var winnerWord = lista.Where(e => e.engine == engine).OrderByDescending(e => e.totalRecords).FirstOrDefault().word;
+                var winnerWord = lista.Where(e => e.engine == engine).OrderByDescending(e => e.totalResults).FirstOrDefault().word;
                 var printSearch = $"{engine}  winner : {winnerWord}";
                 Console.WriteLine(printSearch);
             }
         }
         private static void PrintTotalWinner(List<SearchOUT> lista)
         {
-            var winnerWord = lista.OrderByDescending(e => e.totalRecords).FirstOrDefault().word;
+            var winnerWord = lista.OrderByDescending(e => e.totalResults).FirstOrDefault().word;
             var printSearch = $"Total winner : {winnerWord}";
             Console.WriteLine(printSearch);
         }

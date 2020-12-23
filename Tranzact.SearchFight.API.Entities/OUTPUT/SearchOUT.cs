@@ -8,6 +8,6 @@ namespace Tranzact.SearchFight.API.Entities.OUTPUT
     {
         public string engine { get; set; }
         public string word { get; set; }
-        public long totalRecords { get; set; }
+        public long totalResults { get; set; }
     }
 }

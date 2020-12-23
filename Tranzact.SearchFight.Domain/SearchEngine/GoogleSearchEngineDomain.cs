@@ -12,19 +12,23 @@ using Tranzact.SearchFight.Domain.Interface;
 using Tranzact.SearchFight.Transversal;
 using System.Linq;
 using System.Collections;
+using AutoMapper;
+using Microsoft.Extensions.Options;
 
 namespace Tranzact.SearchFight.Domain.SearchEngine
 {
     public class GoogleSearchEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.Google;
-        private readonly AppSettings _appSettings;
-        public GoogleSearchEngineDomain(AppSettings appSettings)
+        private readonly IMapper _mapper;
+        private readonly IOptions<GoogleEngine> _config;
+        public GoogleSearchEngineDomain( IMapper mapper, IOptions<GoogleEngine> config)
         {
-            _appSettings = appSettings;
+            _mapper = mapper;
+            _config = config;
         }
 
-        public async Task<Response<SearchOUT>> GetTotals(List<string> words)
+        public async Task<Response<SearchOUT>> GetSearchTotals(List<string> words)
         {
             try
             {
@@ -32,9 +36,14 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
 
                 foreach (var word in words)
                 {
-                    listTotals.Add(await SearchEngine(word));
+                    var apiResponse = await InvokeSearchEngineAPI(word);
+                    listTotals.Add(new SearchOUT()
+                    {
+                        word = word,
+                        totalResults = apiResponse.totalResults,
+                        engine = this.Engine
+                    });
                 }
-
 
                 return new Response<SearchOUT>() { Status = true, List = listTotals };
             }
@@ -48,27 +57,21 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
             }
         }
 
-        private async Task<SearchOUT> SearchEngine(string word)
+        public async Task<ApiResponse> InvokeSearchEngineAPI(string word)
         {
-            string apiKey = _appSettings.googleEngine.apiKey;
-            string cx = _appSettings.googleEngine.cx;
-            var customsearchUrl = $"{_appSettings.googleEngine.baseUrl}/customsearch/v1?cx={cx}&key={apiKey}&q={word}";
+            string apiKey = _config.Value.apiKey;
+            string cx = _config.Value.cx;
+            var customsearchUrl = $"{_config.Value.baseUrl}/customsearch/v1?cx={cx}&key={apiKey}&q={word}";
             var googleResponse = new GoogleResponse();
-            var searchOUT = new SearchOUT();
 
             using (var client = new HttpClient())
             {
                 var response = await client.GetAsync(customsearchUrl);
                 var result = await response.Content.ReadAsStringAsync();
                 googleResponse = JsonConvert.DeserializeObject<GoogleResponse>(result);
-                searchOUT = new SearchOUT()
-                {
-                    word = word,
-                    totalRecords = googleResponse.SearchInformation.totalResults,
-                    engine = this.Engine
-                };
             }
-            return searchOUT;
+
+            return _mapper.Map<GoogleResponse, ApiResponse>(googleResponse);
         }
     }
 }

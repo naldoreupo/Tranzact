@@ -7,3 +7,12 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.API.Entities\obj\D
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.pdb
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.csprojAssemblyReference.cache
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.deps.json
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.pdb
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.AssemblyInfoInputs.cache
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.AssemblyInfo.cs
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.csproj.CoreCompileInputs.cache
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.pdb
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.API.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.Entities.csprojAssemblyReference.cache

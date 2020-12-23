@@ -5,14 +5,14 @@ namespace Tranzact.SearchFight.Domain.Entities
 {
     public class GoogleResponse
     {
-        [JsonProperty("searchInformation")]
+        [JsonProperty("SearchInformation")]
         public SearchInformation SearchInformation { get; set; }
     }
 
    public class SearchInformation
     {
 
-        [JsonProperty("totalResults")]
+        [JsonProperty("TotalResults")]
         public long totalResults { get; set; }
     }
 }

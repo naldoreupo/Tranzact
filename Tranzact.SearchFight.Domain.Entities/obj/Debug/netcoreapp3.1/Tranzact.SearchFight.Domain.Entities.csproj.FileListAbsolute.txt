@@ -7,3 +7,12 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Domain.Entities\ob
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.pdb
 C:\Users\naldo.reupomusayon\source\repos\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.csprojAssemblyReference.cache
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.deps.json
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\bin\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.pdb
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.AssemblyInfoInputs.cache
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.AssemblyInfo.cs
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.csproj.CoreCompileInputs.cache
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.pdb
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.csprojAssemblyReference.cache

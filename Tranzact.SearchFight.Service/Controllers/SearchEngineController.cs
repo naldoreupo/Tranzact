@@ -15,17 +15,15 @@ namespace Tranzact.SearchFight.Service.Controllers
     [Route("[controller]")]
     public class SearchEngineController : ControllerBase
     {
-
-        private readonly IMapper _mapper;
         private readonly InterfaceFactorySearchEngine _searchEngine;
-        public SearchEngineController(IMapper mapper, InterfaceFactorySearchEngine searchEngine)
+        public SearchEngineController( InterfaceFactorySearchEngine searchEngine)
         {
-            _mapper = mapper;
             _searchEngine = searchEngine;
         }
-
+        
         [HttpGet]
-        public async Task<IActionResult> SearchText([FromBody]  SearchIN searchIN)
+        [Route("GetSearchTotals")]
+        public async Task<IActionResult> GetSearchTotals([FromBody]  SearchIN searchIN)
         {
             try
             {
@@ -33,7 +31,7 @@ namespace Tranzact.SearchFight.Service.Controllers
                     return BadRequest($"{searchIN.engine} is not currently supported");
 
                 var _engineDomain = _searchEngine.Build(searchIN.engine);
-                var result = await _engineDomain.GetTotals(searchIN.query.SplitBySpace());
+                var result = await _engineDomain.GetSearchTotals(searchIN.query.SplitBySpace());
 
                 return Ok(result);
             }
