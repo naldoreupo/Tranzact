@@ -1,29 +1,27 @@
-using AutoMapper;
+﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
+using System.Text;
 using Tranzact.SearchFight.API.Entities;
 using Tranzact.SearchFight.Domain.SearchEngine;
-using Xunit;
 using Tranzact.SearchFight.Transversal;
-using System.Net;
-using Moq;
-using System.Threading.Tasks;
-using System.Threading;
-using Microsoft.Extensions.Configuration;
+using Xunit;
 
 namespace Tranzact.SearchFight.Domain.Test
 {
-    public class GoogleSearchEngineDomainUnitTest
+    public class MSNSearchEngineDomainUnitTest
     {
         private readonly IOptions<GoogleEngine> _appSettings = Substitute.For<IOptions<GoogleEngine>>();
         private readonly IMapper _mapper;
 
         private readonly IConfigurationRoot _config;
 
-        public GoogleSearchEngineDomainUnitTest()
+        public MSNSearchEngineDomainUnitTest()
         {
             _config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
@@ -38,16 +36,16 @@ namespace Tranzact.SearchFight.Domain.Test
         public async void GetTotals_InputValid_ReturnOk(string query)
         {
             // Arrange           
-            var optionValue = _config.GetSection("GoogleEngine").Get<GoogleEngine>();
-            var options = Options.Create<GoogleEngine>(optionValue);
+            var optionValue = _config.GetSection("GoogleEngine").Get<MSNEngine>();
+            var options = Options.Create<MSNEngine>(optionValue);
 
-            var response = "{\"searchInformation\": { \"totalResults\": \"10570000000\"}}";
+            var response = "{\"webPages\":{\"totalEstimatedMatches\":107000000 }}";
             var messageHandler = new MockHttpMessageHandler(response, HttpStatusCode.InternalServerError);
             var httpClient = new HttpClient(messageHandler)
             {
                 BaseAddress = new Uri("http://not-important.com")
             };
-            var googleSearchEngineDomain = new GoogleSearchEngineDomain(_mapper, options, httpClient);
+            var googleSearchEngineDomain = new MSNEngineDomain(_mapper, options, httpClient);
 
             //Act
             var result = await googleSearchEngineDomain.GetSearchTotals(query.SplitBySpace());

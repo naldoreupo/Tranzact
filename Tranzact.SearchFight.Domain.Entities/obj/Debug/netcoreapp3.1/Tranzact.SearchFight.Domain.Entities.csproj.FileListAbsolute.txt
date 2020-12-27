@@ -15,4 +15,3 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.En
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.csproj.CoreCompileInputs.cache
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.pdb
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Domain.Entities\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Domain.Entities.csprojAssemblyReference.cache

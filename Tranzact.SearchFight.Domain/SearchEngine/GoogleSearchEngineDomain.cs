@@ -14,20 +14,23 @@ using System.Linq;
 using System.Collections;
 using AutoMapper;
 using Microsoft.Extensions.Options;
+using Google.Apis.Http;
 
 namespace Tranzact.SearchFight.Domain.SearchEngine
 {
     public class GoogleSearchEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.Google;
+        public HttpClient _httpClient ;
         private readonly IMapper _mapper;
         private readonly IOptions<GoogleEngine> _config;
-        public GoogleSearchEngineDomain( IMapper mapper, IOptions<GoogleEngine> config)
+        public GoogleSearchEngineDomain(IMapper mapper, IOptions<GoogleEngine> config, HttpClient httpClient)
         {
             _mapper = mapper;
             _config = config;
+            _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri(_config.Value.baseUrl);
         }
-
         public async Task<Response<SearchOUT>> GetSearchTotals(List<string> words)
         {
             try
@@ -61,15 +64,11 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
         {
             string apiKey = _config.Value.apiKey;
             string cx = _config.Value.cx;
-            var customsearchUrl = $"{_config.Value.baseUrl}/customsearch/v1?cx={cx}&key={apiKey}&q={word}";
-            var googleResponse = new GoogleResponse();
+            var customsearchUrl = $"/customsearch/v1?cx={cx}&key={apiKey}&q={word}";
 
-            using (var client = new HttpClient())
-            {
-                var response = await client.GetAsync(customsearchUrl);
-                var result = await response.Content.ReadAsStringAsync();
-                googleResponse = JsonConvert.DeserializeObject<GoogleResponse>(result);
-            }
+            var response = await _httpClient.GetAsync(customsearchUrl);
+            var result = await response.Content.ReadAsStringAsync();
+            var googleResponse = JsonConvert.DeserializeObject<GoogleResponse>(result);
 
             return _mapper.Map<GoogleResponse, ApiResponse>(googleResponse);
         }

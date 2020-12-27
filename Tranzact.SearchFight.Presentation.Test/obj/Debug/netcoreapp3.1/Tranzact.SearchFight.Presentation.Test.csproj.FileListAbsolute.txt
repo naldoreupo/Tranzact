@@ -198,4 +198,3 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Presentat
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Presentation.Test\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Presentation.Test.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Presentation.Test\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Presentation.Test.pdb
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Presentation.Test\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Presentation.Test.genruntimeconfig.cache
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Presentation.Test\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.Presentation.Test.csprojAssemblyReference.cache

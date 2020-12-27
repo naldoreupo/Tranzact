@@ -31,18 +31,17 @@ namespace Tranzact.SearchFight.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<InterfaceGoogleEngine, GoogleEngine>();
-            services.AddTransient<InterfaceMSNEngine, MSNEngine>();
-            
-            services.Configure<GoogleEngine>(option => Configuration.GetSection("GoogleEngine").Bind(option));
-            services.Configure<MSNEngine>(option => Configuration.GetSection("MSNEngine").Bind(option));
-
             IMapper iMapper = Maps.InitMapper();
             services.AddSingleton(iMapper);
 
+            services.AddOptions();
+            services.Configure<GoogleEngine>(Configuration.GetSection("GoogleEngine"));
+            services.Configure<MSNEngine>(Configuration.GetSection("MSNEngine"));
+
             services.AddTransient<InterfaceFactorySearchEngine, FactorySearchengine>();
-            services.AddTransient<InterfaceSearchEngineDomain, GoogleSearchEngineDomain>();
-            services.AddTransient<InterfaceSearchEngineDomain, MSNEngineDomain>();
+            services.AddHttpClient<InterfaceSearchEngineDomain, MSNEngineDomain>();
+            services.AddHttpClient<InterfaceSearchEngineDomain, GoogleSearchEngineDomain>();
+
             services.AddControllers();
         }
 

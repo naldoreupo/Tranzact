@@ -53,6 +53,7 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\b
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Azure.Core.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Azure.Search.Documents.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Google.Apis.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Google.Apis.Customsearch.v1.dll
@@ -69,9 +70,11 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\b
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Rest.ClientRuntime.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\System.Text.Json.dll
@@ -98,6 +101,3 @@ C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\o
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.dll
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.pdb
 C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\obj\Debug\netcoreapp3.1\Tranzact.SearchFight.API.genruntimeconfig.cache
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Castle.Core.dll
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Moq.dll
-C:\Users\naldo.reupomusayon\source\repos\Tranzact\Tranzact.SearchFight.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll

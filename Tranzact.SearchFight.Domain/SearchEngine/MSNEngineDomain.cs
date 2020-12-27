@@ -17,12 +17,14 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
     public class MSNEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.MSN;
+        public HttpClient _httpClient;
         private readonly IMapper _mapper;
         private readonly IOptions<MSNEngine> _config;
-        public MSNEngineDomain( IMapper mapper, IOptions<MSNEngine> config)
+        public MSNEngineDomain(IMapper mapper, IOptions<MSNEngine> config, HttpClient httpClient)
         {
             _config = config;
             _mapper = mapper;
+            _httpClient = httpClient;
         }
 
         public async Task<Response<SearchOUT>> GetSearchTotals(List<string> words)
@@ -41,12 +43,7 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
                         engine = this.Engine
                     });
                 }
-
-                return new Response<SearchOUT>()
-                {
-                    Status = true,
-                    List = list
-                };
+                return new Response<SearchOUT>() { Status = true, List = list };
             }
             catch (Exception ex)
             {
@@ -64,13 +61,10 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
             var customsearchUrl = $"{_config.Value.baseUrl}/search?q={word}";
             var msnResponse = new MSNResponse();
 
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
-                var response = await client.GetAsync(customsearchUrl);
-                var result = await response.Content.ReadAsStringAsync();
-                msnResponse = JsonConvert.DeserializeObject<MSNResponse>(result);
-            }
+            _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
+            var response = await _httpClient.GetAsync(customsearchUrl);
+            var result = await response.Content.ReadAsStringAsync();
+            msnResponse = JsonConvert.DeserializeObject<MSNResponse>(result);
 
             return _mapper.Map<MSNResponse, ApiResponse>(msnResponse);
         }
