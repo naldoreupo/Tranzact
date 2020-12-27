@@ -14,13 +14,13 @@ using Microsoft.Extensions.Options;
 
 namespace Tranzact.SearchFight.Domain.SearchEngine
 {
-    public class MSNEngineDomain : InterfaceSearchEngineDomain
+    public class MSNSearchEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.MSN;
         public HttpClient _httpClient;
         private readonly IMapper _mapper;
         private readonly IOptions<MSNEngine> _config;
-        public MSNEngineDomain(IMapper mapper, IOptions<MSNEngine> config, HttpClient httpClient)
+        public MSNSearchEngineDomain(IMapper mapper, IOptions<MSNEngine> config, HttpClient httpClient)
         {
             _config = config;
             _mapper = mapper;

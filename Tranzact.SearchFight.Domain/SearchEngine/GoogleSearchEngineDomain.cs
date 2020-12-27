@@ -21,7 +21,7 @@ namespace Tranzact.SearchFight.Domain.SearchEngine
     public class GoogleSearchEngineDomain : InterfaceSearchEngineDomain
     {
         public string Engine => EngineConstants.Google;
-        public HttpClient _httpClient ;
+        public HttpClient _httpClient;
         private readonly IMapper _mapper;
         private readonly IOptions<GoogleEngine> _config;
         public GoogleSearchEngineDomain(IMapper mapper, IOptions<GoogleEngine> config, HttpClient httpClient)

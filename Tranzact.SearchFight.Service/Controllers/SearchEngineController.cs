@@ -16,14 +16,14 @@ namespace Tranzact.SearchFight.Service.Controllers
     public class SearchEngineController : ControllerBase
     {
         private readonly InterfaceFactorySearchEngine _searchEngine;
-        public SearchEngineController( InterfaceFactorySearchEngine searchEngine)
+        public SearchEngineController(InterfaceFactorySearchEngine searchEngine)
         {
             _searchEngine = searchEngine;
         }
-        
+
         [HttpGet]
         [Route("GetSearchTotals")]
-        public async Task<IActionResult> GetSearchTotals([FromBody]  SearchIN searchIN)
+        public async Task<IActionResult> GetSearchTotals([FromBody] SearchIN searchIN)
         {
             try
             {

@@ -1,17 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Tranzact.SearchFight.API.Entities;
 using Tranzact.SearchFight.Domain.Interface;
 using Tranzact.SearchFight.Domain.SearchEngine;
@@ -39,7 +31,7 @@ namespace Tranzact.SearchFight.Service
             services.Configure<MSNEngine>(Configuration.GetSection("MSNEngine"));
 
             services.AddTransient<InterfaceFactorySearchEngine, FactorySearchengine>();
-            services.AddHttpClient<InterfaceSearchEngineDomain, MSNEngineDomain>();
+            services.AddHttpClient<InterfaceSearchEngineDomain, MSNSearchEngineDomain>();
             services.AddHttpClient<InterfaceSearchEngineDomain, GoogleSearchEngineDomain>();
 
             services.AddControllers();

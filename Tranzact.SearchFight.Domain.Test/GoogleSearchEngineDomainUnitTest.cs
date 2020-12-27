@@ -13,6 +13,7 @@ using Moq;
 using System.Threading.Tasks;
 using System.Threading;
 using Microsoft.Extensions.Configuration;
+using System.Linq;
 
 namespace Tranzact.SearchFight.Domain.Test
 {
@@ -42,7 +43,7 @@ namespace Tranzact.SearchFight.Domain.Test
             var options = Options.Create<GoogleEngine>(optionValue);
 
             var response = "{\"searchInformation\": { \"totalResults\": \"10570000000\"}}";
-            var messageHandler = new MockHttpMessageHandler(response, HttpStatusCode.InternalServerError);
+            var messageHandler = new MockHttpMessageHandler(response, HttpStatusCode.OK);
             var httpClient = new HttpClient(messageHandler)
             {
                 BaseAddress = new Uri("http://not-important.com")
@@ -50,10 +51,12 @@ namespace Tranzact.SearchFight.Domain.Test
             var googleSearchEngineDomain = new GoogleSearchEngineDomain(_mapper, options, httpClient);
 
             //Act
+            var words = query.SplitBySpace();
             var result = await googleSearchEngineDomain.GetSearchTotals(query.SplitBySpace());
 
             // Assert
             Assert.True(result.Status);
+            Assert.Equal(words.Count(), result.List.Count());
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -45,13 +46,15 @@ namespace Tranzact.SearchFight.Domain.Test
             {
                 BaseAddress = new Uri("http://not-important.com")
             };
-            var googleSearchEngineDomain = new MSNEngineDomain(_mapper, options, httpClient);
+            var googleSearchEngineDomain = new MSNSearchEngineDomain(_mapper, options, httpClient);
 
             //Act
-            var result = await googleSearchEngineDomain.GetSearchTotals(query.SplitBySpace());
+            var words = query.SplitBySpace();
+            var result = await googleSearchEngineDomain.GetSearchTotals(words);
 
             // Assert
             Assert.True(result.Status);
+            Assert.Equal(words.Count(), result.List.Count());
         }
     }
 }
